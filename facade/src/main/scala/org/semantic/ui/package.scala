@@ -12,6 +12,7 @@ import scala.scalajs.js.annotation.JSExport
 package object ui {
 
   implicit class SemanticUIJquery(jq:JQuery) extends Jex(jq){
+    def checkbox(config: CheckboxConfig): Checkbox = new Checkbox(dyno(_.checkbox(config)))
     def tab(config:TabConfig):JQuery = dyno(j=>j.tab(config))
     def tab(): JQuery = dyno(j=>j.tab())
     def sidebar(config:SidebarConfig): Sidebar = new Sidebar(dyno(_.sidebar(config)))
